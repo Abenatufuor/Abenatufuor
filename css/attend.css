@@ -1,0 +1,436 @@
+:root {
+  --layout-bg: rgb(192, 155, 116);
+  --layout-text: rgb(197, 103, 40);
+  --content-bg: rgb(170, 195, 236);
+  --content-text: rgb(197, 103, 40);
+  --action-bg: red;
+  --action-text: white;
+  --error-text: yellow;
+}
+html {
+  font: 1em sans-serif;
+}
+.title-box {
+  background-color: var(--layout-bg);
+  color: var(--layout-text);
+  padding: 0%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.title-box img {
+  width: 100px;
+}
+.title-box .img-tile {
+  flex: 1 0;
+}
+.title-box .title-tile {
+  flex: 9 1;
+}
+.title-box .description {
+  flex: 100%;
+}
+.hero-box-container {
+  background-color: var(--content-bg);
+  color: var(--content-text);
+  width: 100%;
+  border: 10px solid rgb(192, 155, 116);
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-box-container .box {
+  flex: 30%;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--layout-bg);
+  color: var(--layout-text);
+}
+.hero-box-container .box h2 {
+  color: var(--action-bg);
+}
+.action-container {
+  background-color: var(--content-bg);
+  color: var(--content-text);
+  width: 100%;
+  border: 5px var(--content-bg);
+  margin: 0%;
+  padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.action-button {
+  background-color: red;
+  border: 5px solid yellow;
+  text-decoration: none;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  display: inline-block;
+  font-size: 2em;
+  width: 7em;
+}
+.menu {
+  background-color: var(--layout-bg);
+  color: var(--layout-text);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 5px 6px;
+}
+.sub-menu {
+  align-self: flex-start;
+  position: relative;
+}
+.sub-menu-container {
+  display: none;
+  flex-flow: column;
+  border-width: 3px 4px 3px 4px;
+  border-color: yellow;
+  margin: 3px 4px;
+}
+.sub-menu:hover .sub-menu-container {
+  display: flex;
+}
+.menu-item {
+  /* flex: 1 1; */
+  align-self: flex-start;
+  position: relative;
+}
+.menu-item a {
+  color: var(--content-text);
+  background-color: var(--content-bg);
+  text-decoration: none;
+  background-color: var(--content-bg);
+  text-decoration: none;
+  color: var(--content-text);
+  border-width: 2px 3px 2px 3px;
+  padding: 5px 6px;
+  text-align: center;
+  display: inline-block;
+  margin: 3px 4px;
+  font-size: 1.2em;
+  /* width: 7em; */
+}
+.menu-item .tooltip {
+  visibility: hidden;
+  width: 120px;
+  top: 75%;
+  left: 5%;
+  margin-left: -60px;
+  background-color: var(--layout-bg);
+  color: red;
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: var(--layout-text);
+  border-style: solid;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  font-size: 0.75em;
+}
+.menu-item:hover .tooltip {
+  visibility: visible;
+}
+.menu-item .active-menu {
+  background-color: var(--action-bg);
+  color: var(--action-text);
+  padding: 5px 6px;
+  text-align: center;
+  display: inline-block;
+  border-width: 3px 4px 3px 4px;
+  border-color: yellow;
+  margin: 3px 4px;
+  font-size: 1.2 em;
+  /* width: 7em; */
+}
+.form-box {
+  background-color: var(--content-bg);
+  color: var(--content-text);
+  width: 95%;
+  border: 5px solid rgb(192, 155, 116);
+  margin: 1%;
+  align-self: center;
+
+  padding: 0%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: left;
+}
+.form-box .inner-form {
+  flex: 0 1 100%;
+  background-color: var(--content-bg);
+  color: var(--content-text);
+  border: 5px solid rgb(192, 155, 116);
+  margin: 2rem;
+  padding: 0%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: left;
+}
+.form-box .inner-row {
+  flex: 0 1 40%;
+  background-color: var(--content-bg);
+  color: var(--content-text);
+  border: 5px solid rgb(192, 155, 116);
+  margin: 2rem;
+  padding: 1%;
+  /* display: flex;
+  flex-flow: row;
+  justify-content: center; */
+}
+.form-box .field-group {
+  flex: 0 1 1%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em;
+  align-items: flex-start;
+}
+
+.form-box .field-group input {
+  padding: 5px 6px;
+  flex: 5 2;
+  /* width: 30em; */
+  margin: 1%;
+}
+.form-box .field-group label {
+  font-weight: bold;
+  flex: 3 1;
+  padding: 5px 6px;
+  margin: 1%;
+}
+.form-box .field-group .short-column {
+  display: flex;
+  flex: 0 1 12%;
+  flex-flow: column;
+  align-items: center;
+}
+.form-box .field-group .short-column label {
+  flex: 0 1 18%;
+  padding: 0;
+  justify-content: center;
+  align-content: space-around;
+}
+.form-box .field-group .short-column input[type="checkbox"]:focus {
+  flex: 0 1 20%;
+  padding: 0;
+  justify-content: center;
+  align-content: space-around;
+  color: red;
+}
+
+.form-box .field-group .short-column input[type="checkbox"] {
+  flex: 0 1 20%;
+  padding: 0;
+  justify-content: center;
+  color: yellow;
+}
+
+.form-box button {
+  background-color: red;
+  flex: 3 1;
+  align-self: center;
+  width: 10rem;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
+}
+.form-box button:disabled {
+  background-color: gray;
+}
+.form-box input {
+  flex: 30%;
+  padding: 5px 6px;
+  margin: 1%;
+}
+.form-box label {
+  flex: 20%;
+  font-weight: bold;
+  padding: 5px 6px;
+  margin: 1%;
+}
+.form-box .hidden {
+  visibility: hidden;
+}
+.form-box .radio-box {
+  align-self: center;
+  flex: 5 1;
+  background-color: var(--content-bg);
+  color: var(--content-text);
+  width: 75%;
+  border: 2px solid rgb(192, 155, 116);
+  margin: 1%;
+  padding: 0%;
+}
+.form-box .radio-box p {
+  color: var(--content-text);
+  font-weight: bold;
+  width: 100%;
+  margin: 1%;
+  padding: 0%;
+}
+.form-box .radio-box input {
+  width: 10%;
+}
+.form-box .radio-box input + label {
+  width: 30%;
+  font-weight: normal;
+}
+.form-box .error-msg {
+  border: 1px solid var(--error-text);
+  color: var(--error-text);
+  background-color: var(--action-bg);
+}
+.form-box .info-msg {
+  color: var(--layout-text);
+  font-size: 0.25em;
+}
+.att table td th {
+  width: auto;
+}
+.form-box .check-title {
+  margin-left: 3rem;
+  font-size: 1.5em;
+  background-color: var(--action-bg);
+  color: var(--action-text);
+}
+.form-box span .tooltip {
+  visibility: hidden;
+  width: 300px;
+  /* top: 75%;
+  left: 5%; */
+  left: 100px;
+  background-color: var(--layout-bg);
+  color: red;
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: var(--layout-text);
+  border-style: solid;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  font-size: 0.75em;
+}
+
+.form-box span:hover .tooltip {
+  visibility: visible;
+}
+
+/* The following  are taken from this fancy checkbox article: https://medium.com/mobile-app-developers/styling-checkbox-css-tips-e103c54ea1c7 */
+.form-box .fancy-check-label {
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 24px;
+  height: 24px;
+  width: 24px;
+  clear: both;
+}
+
+.form-box .fancy-check-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form-box .fancy-check-label .fancy-check-custom {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  border: 2px solid #ffffff;
+}
+
+.form-box .fancy-check-label input:checked ~ .fancy-check-custom {
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid #ffffff;
+}
+.form-box .disabled-check input:checked ~ .fancy-check-custom {
+  border: 2px solid gray;
+}
+.form-box .fancy-check-label .fancy-check-custom::after {
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid var(--action-text);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.form-box .fancy-check-label input:checked ~ .fancy-check-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--action-bg);
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* For Ripple Effect */
+.form-box .fancy-check-label .fancy-check-custom::before {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 10px;
+  width: 0px;
+  height: 0px;
+  border-radius: 5px;
+  border: 2px solid var(--layout-text);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.form-box .fancy-check-label input:checked ~ .fancy-check-custom::before {
+  left: -3px;
+  top: -3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  -webkit-transform: scale(3);
+  -ms-transform: scale(3);
+  transform: scale(3);
+  opacity: 0;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
