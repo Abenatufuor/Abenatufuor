@@ -1,5 +1,5 @@
 <?php
-include_once "get_menus.php";
+include_once "menu.php";
 $role = $_GET['role'];
 ?><!DOCTYPE html>
 <html lang="en">
