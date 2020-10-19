@@ -21,6 +21,10 @@ class menu {
         ],2,"Manage Class"),
             new Menu_Item("Logout","../login/logout.php",3,"Logout of system")
         ];
+        foreach($this->menus as $menu){
+            $menu->active= ($menu->text ==$text);
+        }
+
 
     }
     function get_html(){
@@ -36,22 +40,23 @@ class menu {
     }
     //Creating a method , it is an array of objects
     function add_menu_item($Menu_Item) {
-       array_push($this->menus,$text);
+       array_push($this->menus,$Menu_Item);
     }
     function get_menu_item($single){
         foreach($this->menus as $i){
 
-          if($i->single==$single){
+          if($i->text==$single){
                return $i;
           }
 
       }
-        return null
+        return null;
 
     }
+
     function delete_menu_item($now_single){
         for($i=0;$i<count($this->menus);$i++){
-            if($this->now_single==$now_single){
+            if($this->menus[$i]->text==$now_single){
                 array_splice($this->menus,$i,$i);
             }
         }
